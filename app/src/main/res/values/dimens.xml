@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="size_180">180sp</dimen>
+    <dimen name="padding_18">18sp</dimen>
+    <dimen name="padding_22">22sp</dimen>
+    <dimen name="padding_10">10sp</dimen>
+    <dimen name="padding_8">8sp</dimen>
+    <dimen name="size_12">12sp</dimen>
+    <dimen name="size_52">52sp</dimen>
+    <dimen name="size_4">4sp</dimen>
+    <dimen name="size_100">100sp</dimen>
+    <dimen name="size_8">8sp</dimen>
+    <dimen name="size_18">18sp</dimen>
+    <dimen name="size_80">80sp</dimen>
+    <dimen name="size_120">120sp</dimen>
+    <dimen name="padding_16">16sp</dimen>
+    <dimen name="padding_12">12sp</dimen>
+    <dimen name="size_24">24sp</dimen>
+    <dimen name="size_48">48sp</dimen>
+    <dimen name="size_22">22sp</dimen>
+</resources>

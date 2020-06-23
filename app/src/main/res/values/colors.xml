@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="colorPrimaryDark">#FFFFFF</color>
+    <color name="colorAccent">#256584</color>
+    <color name="pinkColor">#A766A2</color>
+    <color name="grey_back">#F4F4F4</color>
+    <color name="text_color">#222222</color>
+    <color name="input_border_color">#987A97</color>
+    <color name="colorAccentGrad">#2A6E92</color>
+</resources>
