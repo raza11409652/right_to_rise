@@ -8,4 +8,5 @@
     <color name="text_color">#222222</color>
     <color name="input_border_color">#987A97</color>
     <color name="colorAccentGrad">#2A6E92</color>
+    <color name="transparent">#00000000</color>
 </resources>
