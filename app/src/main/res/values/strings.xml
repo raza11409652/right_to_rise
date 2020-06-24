@@ -32,4 +32,12 @@
     <string name="description_goverment_text">"Goverment description text  Goverment description text "</string>
     <string name="bare_act_posh">Bare Act (Posh Act)</string>
     <string name="bare_act_rules">Bare Act (Rules)</string>
+    <string name="posh_100_posh_jano">POSH 100 POSH Jano</string>
+    <string name="posh_101_practitionar">Posh 100 Practiotionar</string>
+    <string name="posh_102_professional">POSH 102 Professional</string>
+    <string name="icc_spa">POSH 103 ICC Specialist</string>
+    <string name="posh_104_auditor">Posh 104 Auditor</string>
+    <string name="posh_105_compliance">Posh 105 Compliance Specialist</string>
+    <string name="posh_106_master_training">POSH 106 Master Training</string>
+    <string name="posh_107_big_boss">POSH 107 BIG BOSS</string>
 </resources>

@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
@@ -25,6 +28,7 @@ import com.droidtech.ridetorise.fragment.Contact_fragment;
 import com.droidtech.ridetorise.fragment.Downloads;
 import com.droidtech.ridetorise.fragment.HomeFragment;
 import com.droidtech.ridetorise.fragment.Posh;
+import com.droidtech.ridetorise.fragment.Training;
 import com.droidtech.ridetorise.fragment.VideosFragment;
 import com.google.android.material.navigation.NavigationView;
 
@@ -32,9 +36,12 @@ public class Home extends AppCompatActivity {
     FrameLayout homeFragmentHolder;
     HomeFragment homeFragment;
     DrawerLayout drawerLayout;
+    ImageView logo_header;
     private ActionBarDrawerToggle actionBarDrawerToggle;
     private NavigationView navigationView;
     Toolbar toolbar;
+    LinearLayout customView;
+    TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +53,9 @@ public class Home extends AppCompatActivity {
         ActionBar actionbar = getSupportActionBar();
         actionbar.setDisplayHomeAsUpEnabled(true);
         actionbar.setHomeButtonEnabled(true);
-
+        customView = new LinearLayout(this);
+        customView.setOrientation(LinearLayout.VERTICAL);
+        textView = new TextView(this);
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.open,
                 R.string.close);
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
@@ -68,6 +77,7 @@ public class Home extends AppCompatActivity {
         updateUi(homeFragment);
         setTitle("");
 
+        logo_header = new ImageView(this);
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @RequiresApi(api = Build.VERSION_CODES.M)
@@ -78,7 +88,7 @@ public class Home extends AppCompatActivity {
                     case R.id.videos:
 
                         updateUi(new VideosFragment());
-                        changeThemeToCustom(toolbar);
+                        changeThemeToCustom(toolbar, getString(R.string.videos));
 
                         break;
                     case R.id.home:
@@ -86,16 +96,20 @@ public class Home extends AppCompatActivity {
                         changeToNormal(toolbar);
                         break;
                     case R.id.contact:
-                        changeThemeToCustom(toolbar);
+                        changeThemeToCustom(toolbar, getString(R.string.contact_us));
                         updateUi(new Contact_fragment());
                         break;
                     case R.id.download:
                         updateUi(new Downloads());
-                        changeThemeToCustom(toolbar);
+                        changeThemeToCustom(toolbar, getString(R.string.download));
                         break;
                     case R.id.posh:
                         updateUi(new Posh());
-                        changeThemeToCustom(toolbar);
+                        changeThemeToCustom(toolbar, getString(R.string.posh));
+                        break;
+                    case R.id.training:
+                        changeThemeToCustom(toolbar, getString(R.string.training));
+                        updateUi(new Training());
                         break;
                 }
 
@@ -110,13 +124,31 @@ public class Home extends AppCompatActivity {
     private void changeToNormal(Toolbar toolbar) {
         toolbar.setBackgroundColor(getColor(R.color.transparent));
         toolbar.setElevation((float) 0.0);
+        toolbar.removeView(customView);
 
     }
 
     @RequiresApi(api = Build.VERSION_CODES.M)
-    private void changeThemeToCustom(Toolbar toolbar) {
+    private void changeThemeToCustom(Toolbar toolbar, String headerText) {
         toolbar.setBackgroundColor(getColor(R.color.colorPrimaryDark));
         toolbar.setElevation((float) 10.0);
+
+        textView.setTextColor(getColor(R.color.colorAccent));
+        if (toolbar.getChildCount() > 1) {
+            toolbar.removeView(customView);
+            customView.removeAllViews();
+        }
+        toolbar.addView(customView);
+
+        customView.addView(logo_header);
+        customView.setPadding(10, 10, 10, 10);
+
+        logo_header.setImageDrawable(getDrawable(R.drawable.text_logo));
+
+        customView.addView(textView);
+        textView.setText(headerText);
+        textView.setTextSize((float) 24.0);
+        textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
     }
 
     private void closeDrawer() {
