@@ -19,4 +19,5 @@
     <dimen name="size_48">48sp</dimen>
     <dimen name="size_22">22sp</dimen>
     <dimen name="size_10">10sp</dimen>
+    <dimen name="size_140">140sp</dimen>
 </resources>

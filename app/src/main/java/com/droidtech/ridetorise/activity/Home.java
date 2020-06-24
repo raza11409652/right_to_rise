@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -40,9 +41,11 @@ public class Home extends AppCompatActivity {
     private ActionBarDrawerToggle actionBarDrawerToggle;
     private NavigationView navigationView;
     Toolbar toolbar;
-    LinearLayout customView;
-    TextView textView;
+    TextView headerText;
+    LinearLayout customLayout;
+    View headerBottom ;
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,9 +56,7 @@ public class Home extends AppCompatActivity {
         ActionBar actionbar = getSupportActionBar();
         actionbar.setDisplayHomeAsUpEnabled(true);
         actionbar.setHomeButtonEnabled(true);
-        customView = new LinearLayout(this);
-        customView.setOrientation(LinearLayout.VERTICAL);
-        textView = new TextView(this);
+//        actionbar.setIcon(getDrawable(R.drawable.rkt_menu_ison));
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.open,
                 R.string.close);
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
@@ -72,13 +73,20 @@ public class Home extends AppCompatActivity {
          * Init views
          *
          */
+        headerBottom = LayoutInflater.from(getApplicationContext()).inflate(R.layout.header_layout_logo, null, false);
         homeFragmentHolder = findViewById(R.id.frame_layout_holder);
         homeFragment = new HomeFragment();
         updateUi(homeFragment);
         setTitle("");
-
+        toolbar.setNavigationIcon(getDrawable(R.drawable.menu_icon_));
+        customLayout  = new LinearLayout(this);
+        customLayout.setOrientation(LinearLayout.VERTICAL);
         logo_header = new ImageView(this);
-
+        logo_header.setImageDrawable(getDrawable(R.drawable.text_logo));
+        headerText = new TextView(this);
+        headerText.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+        headerText.setTextColor(getColor(R.color.colorAccent));
+        headerText.setTextSize((float) 24.0);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
@@ -124,31 +132,26 @@ public class Home extends AppCompatActivity {
     private void changeToNormal(Toolbar toolbar) {
         toolbar.setBackgroundColor(getColor(R.color.transparent));
         toolbar.setElevation((float) 0.0);
-        toolbar.removeView(customView);
+        toolbar.removeView(customLayout);
 
     }
 
     @RequiresApi(api = Build.VERSION_CODES.M)
-    private void changeThemeToCustom(Toolbar toolbar, String headerText) {
+    private void changeThemeToCustom(Toolbar toolbar, String text) {
         toolbar.setBackgroundColor(getColor(R.color.colorPrimaryDark));
         toolbar.setElevation((float) 10.0);
 
-        textView.setTextColor(getColor(R.color.colorAccent));
         if (toolbar.getChildCount() > 1) {
-            toolbar.removeView(customView);
-            customView.removeAllViews();
+            toolbar.removeView(customLayout);
+            customLayout.removeAllViews();
+
         }
-        toolbar.addView(customView);
+        toolbar.addView(customLayout);
+        customLayout.addView(logo_header);
+        customLayout.addView(headerText);
+        headerText.setText(text);
+        customLayout.addView(headerBottom);
 
-        customView.addView(logo_header);
-        customView.setPadding(10, 10, 10, 10);
-
-        logo_header.setImageDrawable(getDrawable(R.drawable.text_logo));
-
-        customView.addView(textView);
-        textView.setText(headerText);
-        textView.setTextSize((float) 24.0);
-        textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
     }
 
     private void closeDrawer() {
