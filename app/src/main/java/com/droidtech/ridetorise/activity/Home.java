@@ -169,8 +169,8 @@ public class Home extends AppCompatActivity {
         customLayout.addView(headerText);
         headerText.setText(text);
         customLayout.addView(headerBottom);
-        MenuItem item = navigationView.getCheckedItem();
-//        item.setIconTintList(Color)
+        toolbar.setBackgroundColor(getColor(R.color.grey_back));
+
 
     }
 
@@ -180,7 +180,8 @@ public class Home extends AppCompatActivity {
         }
     }
 
-    private void updateUi(Fragment fragment) {
+
+    public void updateUi(Fragment fragment) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(homeFragmentHolder.getId(), fragment);
         transaction.addToBackStack(null);
@@ -200,6 +201,6 @@ public class Home extends AppCompatActivity {
 
         changeToNormal(toolbar);
         updateUi(new HomeFragment());
-//        super.onBackPressed();
+
     }
 }

@@ -127,11 +127,11 @@
             </LinearLayout>
 
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="200sp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/size_18"
-                android:background="@drawable/background_btn_accent"
+                android:background="@drawable/btn_shadow_blue"
                 android:text="@string/submit"
                 android:textColor="@color/colorPrimaryDark"></Button>
 
