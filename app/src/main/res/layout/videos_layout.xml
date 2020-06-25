@@ -8,7 +8,7 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_marginTop="@dimen/size_48"
+        android:layout_marginTop="@dimen/size_52"
         android:id="@+id/videos_list_holder"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

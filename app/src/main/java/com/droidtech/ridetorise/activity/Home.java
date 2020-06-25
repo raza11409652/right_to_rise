@@ -197,8 +197,9 @@ public class Home extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
-        updateUi(new HomeFragment());
+
         changeToNormal(toolbar);
+        updateUi(new HomeFragment());
+//        super.onBackPressed();
     }
 }
