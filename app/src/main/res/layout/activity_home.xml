@@ -47,9 +47,9 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         app:headerLayout="@layout/nav_header"
+        app:itemIconTint="@color/menu_selector"
+        app:itemTextColor="@color/menu_text_selector"
         app:itemBackground="@drawable/menu_item_selector"
-        app:itemIconTint="@color/pinkColor"
-        app:itemTextColor="@color/colorAccent"
         app:menu="@menu/side_navigation_menu">
 
     </com.google.android.material.navigation.NavigationView>
