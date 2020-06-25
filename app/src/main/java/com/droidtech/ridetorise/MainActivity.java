@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.droidtech.ridetorise.activity.Home;
+import com.droidtech.ridetorise.utils.TypeFaceUtils;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,6 +20,11 @@ public class MainActivity extends AppCompatActivity {
         Intent home = new Intent(getApplicationContext(), Home.class);
         updateUi(home);
 //        startActivity(intent);
+        try {
+            TypeFaceUtils.overrideFont(getApplicationContext(), "SERIF", "fonts/font.ttf");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private void updateUi(Intent intent) {

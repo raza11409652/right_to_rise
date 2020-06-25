@@ -34,6 +34,7 @@ import com.droidtech.ridetorise.fragment.HomeFragment;
 import com.droidtech.ridetorise.fragment.Posh;
 import com.droidtech.ridetorise.fragment.Training;
 import com.droidtech.ridetorise.fragment.VideosFragment;
+import com.droidtech.ridetorise.utils.TypeFaceUtils;
 import com.google.android.material.navigation.NavigationView;
 
 public class Home extends AppCompatActivity {
@@ -52,6 +53,11 @@ public class Home extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        try {
+            TypeFaceUtils.overrideFont(getApplicationContext(), "SERIF", "fonts/font.ttf");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         setContentView(R.layout.activity_home);
         drawerLayout = findViewById(R.id.parent_drawer);
         toolbar = findViewById(R.id.toolbar);
@@ -59,6 +65,9 @@ public class Home extends AppCompatActivity {
         ActionBar actionbar = getSupportActionBar();
         actionbar.setDisplayHomeAsUpEnabled(true);
         actionbar.setHomeButtonEnabled(true);
+
+
+
 //        actionbar.setIcon(getDrawable(R.drawable.rkt_menu_ison));
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.open,
                 R.string.close);
