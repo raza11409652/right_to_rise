@@ -13,228 +13,165 @@
         android:orientation="vertical"
         android:padding="@dimen/padding_12">
 
-        <androidx.cardview.widget.CardView
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_52"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/header_goverment_download"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_pink_shadow">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/padding_12"
+                    android:text="@string/bare_act_posh"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/size_18"></TextView>
+
+                <ImageView
+                    android:id="@+id/arrow_image_goverment"
+                    android:layout_width="@dimen/size_24"
+                    android:layout_height="@dimen/size_24"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/size_10"
+                    android:src="@drawable/rkt_arrow_down_icon" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/goverment_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/padding_12"
+                android:layout_marginRight="@dimen/padding_12"
+                android:text="@string/description"
+                android:visibility="gone"></TextView>
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/size_10"
-            android:clipToPadding="true"
+            android:orientation="vertical">
 
-            app:cardUseCompatPadding="true">
-
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:background="@drawable/back_blue_shadow">
 
-                <RelativeLayout
-                    android:id="@+id/header"
-                    android:layout_width="match_parent"
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/btn_accent_pink_grad"
-                    android:padding="@dimen/padding_8">
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/padding_12"
+                    android:text="@string/bare_act_rules"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/size_18"></TextView>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:text="@string/bare_act_posh"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="@dimen/size_24"></TextView>
+                <ImageView
+                    android:layout_width="@dimen/size_24"
+                    android:layout_height="@dimen/size_24"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/size_10"
+                    android:src="@drawable/rkt_arrow_down_icon" />
+            </RelativeLayout>
 
-                    <ImageView
-                        android:layout_width="@dimen/size_24"
-                        android:layout_height="@dimen/size_24"
-                        android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"
-                        android:src="@drawable/rkt_arrow_down_icon" />
-                </RelativeLayout>
 
-                <LinearLayout
-                    android:id="@+id/line"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="@dimen/padding_8"
-                    android:visibility="gone">
 
-                    <TextView
-                        android:id="@+id/gover_downloads_text"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/description_goverment_text"></TextView>
-                </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/description"
+                android:visibility="gone"></TextView>
 
-            </LinearLayout>
+        </LinearLayout>
 
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/size_10"
-            android:clipToPadding="true"
+            android:orientation="vertical">
 
-            app:cardUseCompatPadding="true">
-
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:background="@drawable/round_pink_shadow">
 
-                <RelativeLayout
-
-                    android:layout_width="match_parent"
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/btn_accent_round"
-                    android:padding="@dimen/padding_8">
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/padding_12"
+                    android:text="@string/summry_of_act"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/size_18"></TextView>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:text="@string/bare_act_rules"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="@dimen/size_24"></TextView>
+                <ImageView
+                    android:layout_width="@dimen/size_24"
+                    android:layout_height="@dimen/size_24"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/size_10"
+                    android:src="@drawable/rkt_arrow_down_icon" />
+            </RelativeLayout>
 
-                    <ImageView
-                        android:layout_width="@dimen/size_24"
-                        android:layout_height="@dimen/size_24"
-                        android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"
-                        android:src="@drawable/rkt_arrow_down_icon" />
-                </RelativeLayout>
 
-                <LinearLayout
 
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="@dimen/padding_8"
-                    android:visibility="gone">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/description"
+                android:visibility="gone"></TextView>
 
-                    <TextView
+        </LinearLayout>
 
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/description"></TextView>
-                </LinearLayout>
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/size_10"
-            android:clipToPadding="true"
+            android:orientation="vertical">
 
-            app:cardUseCompatPadding="true">
-
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:background="@drawable/back_blue_shadow">
 
-                <RelativeLayout
-
-                    android:layout_width="match_parent"
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/btn_accent_pink_grad"
-                    android:padding="@dimen/padding_8">
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/padding_12"
+                    android:text="@string/qna"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/size_18" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:text="@string/additional_downloads"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="@dimen/size_24"></TextView>
+                <ImageView
+                    android:layout_width="@dimen/size_24"
+                    android:layout_height="@dimen/size_24"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/size_10"
+                    android:src="@drawable/rkt_arrow_down_icon" />
+            </RelativeLayout>
 
-                    <ImageView
-                        android:layout_width="@dimen/size_24"
-                        android:layout_height="@dimen/size_24"
-                        android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"
-                        android:src="@drawable/rkt_arrow_down_icon" />
-                </RelativeLayout>
 
-                <LinearLayout
 
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="@dimen/padding_8"
-                    android:visibility="gone">
-
-                    <TextView
-
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/description"></TextView>
-                </LinearLayout>
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/size_10"
-            android:clipToPadding="true"
-
-            app:cardUseCompatPadding="true">
-
-            <LinearLayout
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:text="@string/description"
+                android:visibility="gone"></TextView>
 
-                <RelativeLayout
+        </LinearLayout>
 
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/btn_accent_round"
-                    android:padding="@dimen/padding_8">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:text="@string/lets_know_posh"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="@dimen/size_24"></TextView>
-
-                    <ImageView
-                        android:layout_width="@dimen/size_24"
-                        android:layout_height="@dimen/size_24"
-                        android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"
-                        android:src="@drawable/rkt_arrow_down_icon" />
-                </RelativeLayout>
-
-                <LinearLayout
-
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="@dimen/padding_8"
-                    android:visibility="gone">
-
-                    <TextView
-
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/description"></TextView>
-                </LinearLayout>
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
     </LinearLayout>
 
 </FrameLayout>

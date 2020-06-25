@@ -25,8 +25,11 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.droidtech.ridetorise.R;
+import com.droidtech.ridetorise.fragment.AboutUsFragment;
+import com.droidtech.ridetorise.fragment.Consultancy;
 import com.droidtech.ridetorise.fragment.Contact_fragment;
 import com.droidtech.ridetorise.fragment.Downloads;
+import com.droidtech.ridetorise.fragment.Foundation;
 import com.droidtech.ridetorise.fragment.HomeFragment;
 import com.droidtech.ridetorise.fragment.Posh;
 import com.droidtech.ridetorise.fragment.Training;
@@ -43,7 +46,7 @@ public class Home extends AppCompatActivity {
     Toolbar toolbar;
     TextView headerText;
     LinearLayout customLayout;
-    View headerBottom ;
+    View headerBottom;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -79,12 +82,13 @@ public class Home extends AppCompatActivity {
         updateUi(homeFragment);
         setTitle("");
         toolbar.setNavigationIcon(getDrawable(R.drawable.menu_icon_));
-        customLayout  = new LinearLayout(this);
+        customLayout = new LinearLayout(this);
         customLayout.setOrientation(LinearLayout.VERTICAL);
         logo_header = new ImageView(this);
         logo_header.setImageDrawable(getDrawable(R.drawable.text_logo));
         headerText = new TextView(this);
         headerText.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+        headerText.setAllCaps(true);
         headerText.setTextColor(getColor(R.color.colorAccent));
         headerText.setTextSize((float) 24.0);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -99,10 +103,10 @@ public class Home extends AppCompatActivity {
                         changeThemeToCustom(toolbar, getString(R.string.videos));
 
                         break;
-                    case R.id.home:
-                        updateUi(new HomeFragment());
-                        changeToNormal(toolbar);
-                        break;
+//                    case R.id.home:
+//                        updateUi(new HomeFragment());
+//                        changeToNormal(toolbar);
+//                        break;
                     case R.id.contact:
                         changeThemeToCustom(toolbar, getString(R.string.contact_us));
                         updateUi(new Contact_fragment());
@@ -119,6 +123,18 @@ public class Home extends AppCompatActivity {
                         changeThemeToCustom(toolbar, getString(R.string.training));
                         updateUi(new Training());
                         break;
+                    case R.id.consulting:
+                        changeThemeToCustom(toolbar, getString(R.string.consulting));
+                        updateUi(new Consultancy());
+                        break;
+                    case R.id.about:
+                        changeThemeToCustom(toolbar, getString(R.string.about_us));
+                        updateUi(new AboutUsFragment());
+                        break;
+                    case R.id.rkt_foundation:
+                        changeThemeToCustom(toolbar, getString(R.string.rkt_foundation));
+                        updateUi(new Foundation());
+                        break;
                 }
 
                 return true;
@@ -133,6 +149,8 @@ public class Home extends AppCompatActivity {
         toolbar.setBackgroundColor(getColor(R.color.transparent));
         toolbar.setElevation((float) 0.0);
         toolbar.removeView(customLayout);
+        MenuItem item = navigationView.getCheckedItem();
+        item.setChecked(false);
 
     }
 
@@ -151,6 +169,8 @@ public class Home extends AppCompatActivity {
         customLayout.addView(headerText);
         headerText.setText(text);
         customLayout.addView(headerBottom);
+        MenuItem item = navigationView.getCheckedItem();
+//        item.setIconTintList(Color)
 
     }
 
@@ -172,5 +192,13 @@ public class Home extends AppCompatActivity {
         if (actionBarDrawerToggle.onOptionsItemSelected(item))
             return true;
         return super.onOptionsItemSelected(item);
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.M)
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        updateUi(new HomeFragment());
+        changeToNormal(toolbar);
     }
 }

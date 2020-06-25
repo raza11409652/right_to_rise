@@ -6,10 +6,9 @@
     android:layout_height="wrap_content">
 
     <View
-        android:layout_marginBottom="@dimen/size_10"
+        android:layout_marginBottom="@dimen/size_24"
         android:layout_width="@dimen/size_140"
         android:layout_height="2dp"
-        android:layout_marginTop="@dimen/size_10"
         android:background="@color/pinkColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

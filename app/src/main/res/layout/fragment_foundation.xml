@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.Foundation">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/size_52">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/padding_18">
+
+            <ImageView
+                android:layout_marginTop="@dimen/size_24"
+                android:layout_width="@dimen/size_180"
+                android:layout_height="@dimen/size_180"
+                android:layout_gravity="center"
+                android:src="@drawable/logo_rtr"></ImageView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_10"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/header_about_us"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_pink_shadow">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/size_24"
+                        android:text="@string/about_us"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="@dimen/size_18"></TextView>
+
+                    <ImageView
+                        android:id="@+id/arrow_about_us"
+                        android:layout_width="@dimen/size_24"
+                        android:layout_height="@dimen/size_24"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/size_10"
+                        android:src="@drawable/rkt_arrow_down_icon" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/about_us_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/padding_12"
+                    android:layout_marginRight="@dimen/padding_12"
+                    android:text="@string/dummy_text"
+                    android:visibility="gone"></TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_10"
+                android:orientation="vertical">
+
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/back_blue_shadow">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/size_24"
+                        android:text="@string/core_values"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="@dimen/size_18"></TextView>
+
+                    <ImageView
+
+                        android:layout_width="@dimen/size_24"
+                        android:layout_height="@dimen/size_24"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/size_10"
+                        android:src="@drawable/rkt_arrow_down_icon" />
+                </RelativeLayout>
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/padding_12"
+                    android:layout_marginRight="@dimen/padding_12"
+                    android:text="@string/description"
+                    android:visibility="gone"></TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_10"
+                android:weightSum="2">
+
+                <Button
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/size_1"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_btn_pink"
+                    android:text="learn more"
+                    android:textColor="@color/colorPrimaryDark"></Button>
+
+                <Button
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/size_1"
+                    android:layout_weight="1"
+                    android:background="@drawable/bacgroubd_btn_blue"
+                    android:text="Connect NOw"
+                    android:textColor="@color/colorPrimaryDark"></Button>
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</FrameLayout>
