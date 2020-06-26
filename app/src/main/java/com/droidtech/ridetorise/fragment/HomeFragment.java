@@ -1,8 +1,9 @@
 package com.droidtech.ridetorise.fragment;
 
-import android.annotation.SuppressLint;
+import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -42,6 +43,14 @@ public class HomeFragment extends Fragment {
     Animation animation;
     ViewFlipper viewFlipper;
     ArrayList<Sliding> list = new ArrayList<>();
+    String strSlide[] = {
+            "Slide 1",
+            "Slide 2",
+            "Slide 3",
+            "Slide 4",
+            "Slide 5",
+
+    };
 
     public HomeFragment() {
         // Required empty public constructor
@@ -63,18 +72,9 @@ public class HomeFragment extends Fragment {
 
         viewFlipper = view.findViewById(R.id.viewFlipper);
 
-        String strSlide[] = {
-                "Slide 1",
-                "Slide 2",
-                "Slide 3",
-                "Slide 4",
-                "Slide 5",
-
-        };
-
 
         for (String slide : strSlide) {
-            flipperText (slide);
+            flipperText(slide);
         }
 //        animation =AnimationUtils.loadAnimation(getContext(), R.anim.anim);
 //        slideText.startAnimation(animation);
@@ -119,6 +119,7 @@ public class HomeFragment extends Fragment {
     private void flipperText(String slide) {
         TextView textView = new TextView(getContext());
         textView.setText(slide);
+        textView.setTextColor(getContext().getColor(R.color.text_color));
         textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
         viewFlipper.addView(textView);
         viewFlipper.setFlipInterval(2000);
@@ -168,24 +169,41 @@ public class HomeFragment extends Fragment {
     }
 
 
-    @SuppressLint("ResourceType")
-    @RequiresApi(api = Build.VERSION_CODES.M)
-    private void changeToNormal(Toolbar toolbar) {
-        toolbar.setBackgroundColor(getContext().getColor(R.color.transparent));
-        toolbar.setElevation((float) 0.0);
-        if (customLayout.getChildCount() > 0) {
-            toolbar.removeView(customLayout);
-        }
+//    @SuppressLint("ResourceType")
+//    @RequiresApi(api = Build.VERSION_CODES.M)
+//    private void changeToNormal(Toolbar toolbar) {
+//        toolbar.setBackgroundColor(getContext().getColor(R.color.transparent));
+//        toolbar.setElevation((float) 0.0);
+//        if (customLayout.getChildCount() > 0) {
+//            toolbar.removeView(customLayout);
+//        }
+//
+//        MenuItem item = navigationView.getCheckedItem();
+//        try {
+//            item.setChecked(false);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+////        getApplication().setTheme(R.style.NoActionBar);
+//
+//    }
 
-        MenuItem item = navigationView.getCheckedItem();
-        try {
-            item.setChecked(false);
-        } catch (Exception e) {
-            e.printStackTrace();
+    @Override
+    public void onResume() {
+        super.onResume();
+        Log.d("TAG ", "onResume: Resume");
+        for (String slide : strSlide) {
+            flipperText(slide);
         }
-//        getApplication().setTheme(R.style.NoActionBar);
-
     }
 
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
 
+//        Log.d("TAG ", "onAttach: Attach fragment ");
+//        for (String slide : strSlide) {
+//            flipperText(slide);
+//        }
+    }
 }
