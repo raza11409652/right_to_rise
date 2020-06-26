@@ -41,7 +41,7 @@ public class AboutUsFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        toolbar = getActivity().findViewById(R.id.toolbar);
+//        toolbar = getActivity().findViewById(R.id.toolbar);
 
     }
 
