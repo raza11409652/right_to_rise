@@ -50,7 +50,7 @@
                         android:layout_height="@dimen/size_24"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
-                        android:layout_marginRight="@dimen/size_10"
+                        android:layout_marginRight="@dimen/size_24"
                         android:src="@drawable/rkt_arrow_down_icon" />
                 </RelativeLayout>
 
@@ -71,7 +71,7 @@
                 android:orientation="vertical">
 
                 <RelativeLayout
-
+                    android:id="@+id/core_value_header"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/back_blue_shadow">
@@ -86,17 +86,17 @@
                         android:textSize="@dimen/size_18"></TextView>
 
                     <ImageView
-
+                        android:id="@+id/core_value_arrow"
                         android:layout_width="@dimen/size_24"
                         android:layout_height="@dimen/size_24"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
-                        android:layout_marginRight="@dimen/size_10"
+                        android:layout_marginRight="@dimen/size_24"
                         android:src="@drawable/rkt_arrow_down_icon" />
                 </RelativeLayout>
 
                 <TextView
-
+                    android:id="@+id/core_value_txt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/padding_12"

@@ -139,6 +139,7 @@
                     android:weightSum="2">
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/consulting_card"
                         android:layout_width="0sp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -179,6 +180,7 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/posh_card"
                         android:layout_width="0sp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -227,6 +229,7 @@
                     android:weightSum="2">
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/rkt_foundation_card"
                         android:layout_width="0sp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -267,6 +270,7 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/download_card"
                         android:layout_width="0sp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -315,6 +319,7 @@
                     android:weightSum="2">
 
                     <androidx.cardview.widget.CardView
+
                         android:id="@+id/card_vidoes"
                         android:layout_width="0sp"
                         android:layout_height="wrap_content"

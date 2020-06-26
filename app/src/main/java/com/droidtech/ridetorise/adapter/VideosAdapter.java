@@ -36,9 +36,9 @@ public class VideosAdapter extends RecyclerView.Adapter<VideosAdapter.ViewHolder
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         if (position % 2 == 0) {
-            holder.layout.setBackground(context.getDrawable(R.drawable.back_vidoes_pink));
+            holder.layout.setBackground(context.getDrawable(R.drawable.videos_back_pink_shadow));
         } else {
-            holder.layout.setBackground(context.getDrawable(R.drawable.back_vidoes_accent));
+            holder.layout.setBackground(context.getDrawable(R.drawable.video_back_green_shadow));
 
         }
         holder.title.setText(list.get(position).getTitle());

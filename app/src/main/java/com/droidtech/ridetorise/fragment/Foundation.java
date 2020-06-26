@@ -2,11 +2,6 @@ package com.droidtech.ridetorise.fragment;
 
 import android.animation.ObjectAnimator;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,15 +9,19 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
 import com.droidtech.ridetorise.R;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class Foundation extends Fragment {
-    TextView aboutUsDesc  ;
-    RelativeLayout headerAboutUs ;
-    ImageView arrowAboutUs ;
+    TextView aboutUsDesc, coreValueText;
+    RelativeLayout headerAboutUs, coreValueHeader;
+    ImageView arrowAboutUs, coreValueImage;
 
 
     public Foundation() {
@@ -40,26 +39,35 @@ public class Foundation extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        headerAboutUs  = view.findViewById(R.id.header_about_us) ;
-        aboutUsDesc =view.findViewById(R.id.about_us_text) ;
-        arrowAboutUs = view.findViewById(R.id.arrow_about_us) ;
+        headerAboutUs = view.findViewById(R.id.header_about_us);
+        aboutUsDesc = view.findViewById(R.id.about_us_text);
+        arrowAboutUs = view.findViewById(R.id.arrow_about_us);
+        coreValueHeader = view.findViewById(R.id.core_value_header);
+        coreValueImage = view.findViewById(R.id.core_value_arrow);
+        coreValueText = view.findViewById(R.id.core_value_txt);
+
+        coreValueHeader.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                collapse(coreValueText, coreValueImage);
+            }
+        });
         headerAboutUs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                collapse(aboutUsDesc , arrowAboutUs);
+                collapse(aboutUsDesc, arrowAboutUs);
             }
         });
 
     }
 
     private void collapse(TextView aboutUsDesc, ImageView arrowAboutUs) {
-        if (aboutUsDesc.getVisibility() ==View.GONE){
+        if (aboutUsDesc.getVisibility() == View.GONE) {
             aboutUsDesc.setVisibility(View.VISIBLE);
             arrowAboutUs.setImageDrawable(getContext().getDrawable(R.drawable.ic_arrow_drop_up_black_24dp));
-        }else {
+        } else {
             aboutUsDesc.setVisibility(View.GONE);
             arrowAboutUs.setImageDrawable(getContext().getDrawable(R.drawable.rkt_arrow_down_icon));
-
         }
         ObjectAnimator animation = ObjectAnimator.ofInt(aboutUsDesc, "maxLines", aboutUsDesc.getMaxLines());
         animation.setDuration(200).start();

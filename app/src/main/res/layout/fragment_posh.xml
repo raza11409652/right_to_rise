@@ -1,177 +1,222 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragment.Posh">
 
-    <LinearLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="@dimen/size_52"
-        android:orientation="vertical"
-        android:padding="@dimen/padding_12">
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginTop="@dimen/size_52"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="@dimen/padding_12">
 
-            <RelativeLayout
-                android:id="@+id/header_goverment_download"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/round_pink_shadow">
+                android:layout_marginTop="@dimen/size_52"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/header_bre_posh_act"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_pink_shadow">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/size_24"
+                        android:text="@string/bare_act_posh"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="@dimen/size_18"></TextView>
+
+                    <ImageView
+                        android:id="@+id/arrow_bare_posh_act"
+                        android:layout_width="@dimen/size_24"
+                        android:layout_height="@dimen/size_24"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/size_24"
+                        android:src="@drawable/rkt_arrow_down_icon" />
+                </RelativeLayout>
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:id="@+id/bare_posh_act_txt"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
                     android:layout_marginLeft="@dimen/padding_12"
-                    android:text="@string/bare_act_posh"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="@dimen/size_18"></TextView>
+                    android:layout_marginRight="@dimen/padding_12"
+                    android:text="@string/description"
+                    android:visibility="gone"></TextView>
+            </LinearLayout>
 
-                <ImageView
-                    android:id="@+id/arrow_image_goverment"
-                    android:layout_width="@dimen/size_24"
-                    android:layout_height="@dimen/size_24"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="@dimen/size_10"
-                    android:src="@drawable/rkt_arrow_down_icon" />
-            </RelativeLayout>
-
-            <TextView
-                android:id="@+id/goverment_desc"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/padding_12"
-                android:layout_marginRight="@dimen/padding_12"
-                android:text="@string/description"
-                android:visibility="gone"></TextView>
-        </LinearLayout>
+                android:layout_marginTop="@dimen/size_10"
+                android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/size_10"
-            android:orientation="vertical">
+                <RelativeLayout
+                    android:id="@+id/header_bare_act"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/back_blue_shadow">
 
-            <RelativeLayout
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/size_24"
+                        android:text="@string/bare_act_rules"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="@dimen/size_18"></TextView>
+
+                    <ImageView
+                        android:id="@+id/arrow_bare_act"
+                        android:layout_width="@dimen/size_24"
+                        android:layout_height="@dimen/size_24"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/size_24"
+                        android:src="@drawable/rkt_arrow_down_icon" />
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/data_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/padding_18"
+                    android:visibility="gone">
+
+                    <TextView
+                        style="@style/accent_title_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Rule 1:"></TextView>
+
+                    <TextView
+                        android:id="@+id/desc_bare_act"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dummy_text"></TextView>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2sp"
+                        android:layout_marginTop="@dimen/size_10"
+                        android:background="@color/text_color" />
+
+                    <TextView
+                        style="@style/accent_title_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/size_10"
+                        android:text="Rule 2:"></TextView>
+
+                    <TextView
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dummy_text"></TextView>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/back_blue_shadow">
+                android:layout_marginTop="@dimen/size_10"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/header_summary_act"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_pink_shadow">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/padding_12"
+                        android:text="@string/summry_of_act"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="@dimen/size_18"></TextView>
+
+                    <ImageView
+                        android:id="@+id/arrow_summry_act"
+                        android:layout_width="@dimen/size_24"
+                        android:layout_height="@dimen/size_24"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/size_10"
+                        android:src="@drawable/rkt_arrow_down_icon" />
+                </RelativeLayout>
+
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:id="@+id/desc_summary_act"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="@dimen/padding_12"
-                    android:text="@string/bare_act_rules"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="@dimen/size_18"></TextView>
+                    android:layout_margin="@dimen/size_8"
+                    android:text="@string/description"
+                    android:visibility="gone"></TextView>
 
-                <ImageView
-                    android:layout_width="@dimen/size_24"
-                    android:layout_height="@dimen/size_24"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="@dimen/size_10"
-                    android:src="@drawable/rkt_arrow_down_icon" />
-            </RelativeLayout>
+            </LinearLayout>
 
-
-
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/description"
-                android:visibility="gone"></TextView>
+                android:layout_marginTop="@dimen/size_10"
+                android:orientation="vertical">
 
-        </LinearLayout>
+                <RelativeLayout
+                    android:id="@+id/header_qna"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/back_blue_shadow">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/size_10"
-            android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/padding_12"
+                        android:text="@string/qna"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="@dimen/size_18" />
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/round_pink_shadow">
+                    <ImageView
+                        android:id="@+id/arrow_qna"
+                        android:layout_width="@dimen/size_24"
+                        android:layout_height="@dimen/size_24"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/size_10"
+                        android:src="@drawable/rkt_arrow_down_icon" />
+                </RelativeLayout>
+
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:id="@+id/desc_qna"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="@dimen/padding_12"
-                    android:text="@string/summry_of_act"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="@dimen/size_18"></TextView>
+                    android:layout_margin="@dimen/size_8"
+                    android:text="@string/description"
+                    android:visibility="gone"></TextView>
 
-                <ImageView
-                    android:layout_width="@dimen/size_24"
-                    android:layout_height="@dimen/size_24"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="@dimen/size_10"
-                    android:src="@drawable/rkt_arrow_down_icon" />
-            </RelativeLayout>
+            </LinearLayout>
 
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/description"
-                android:visibility="gone"></TextView>
 
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/size_10"
-            android:orientation="vertical">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/back_blue_shadow">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="@dimen/padding_12"
-                    android:text="@string/qna"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="@dimen/size_18" />
-
-                <ImageView
-                    android:layout_width="@dimen/size_24"
-                    android:layout_height="@dimen/size_24"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="@dimen/size_10"
-                    android:src="@drawable/rkt_arrow_down_icon" />
-            </RelativeLayout>
-
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/description"
-                android:visibility="gone"></TextView>
-
-        </LinearLayout>
-
-
-    </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 
 </FrameLayout>

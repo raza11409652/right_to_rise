@@ -191,7 +191,7 @@ public class Home extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.M)
     private void changeThemeToCustom(Toolbar toolbar, String text) {
         toolbar.setBackgroundColor(getColor(R.color.colorPrimaryDark));
-        toolbar.setElevation((float) 10.0);
+        toolbar.setElevation((float) 20.0);
         Log.d("AG", "changeThemeToCustom: toolbar views" + toolbar.getChildCount());
         if (toolbar.getChildCount() > 1) {
             try{
@@ -229,6 +229,12 @@ public class Home extends AppCompatActivity {
         transaction.replace(homeFragmentHolder.getId(), fragment);
         transaction.addToBackStack(null);
         transaction.commit();
+//      try{
+//          MenuItem item = navigationView.getCheckedItem();
+//          item.setChecked(true);
+//      }catch (Exception e){
+//          e.printStackTrace();
+//      }
     }
 
     @Override

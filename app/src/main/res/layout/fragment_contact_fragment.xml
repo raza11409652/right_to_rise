@@ -160,7 +160,7 @@
             <RelativeLayout
                 android:layout_width="@dimen/size_52"
                 android:layout_height="@dimen/size_52"
-                android:layout_marginRight="@dimen/size_24"
+                android:layout_marginRight="@dimen/size_20"
                 android:background="@drawable/pink_circle">
 
                 <ImageView
@@ -174,7 +174,7 @@
             <RelativeLayout
                 android:layout_width="@dimen/size_52"
                 android:layout_height="@dimen/size_52"
-                android:layout_marginRight="@dimen/size_24"
+                android:layout_marginRight="@dimen/size_20"
                 android:background="@drawable/pink_circle">
 
                 <ImageView
@@ -188,7 +188,7 @@
             <RelativeLayout
                 android:layout_width="@dimen/size_52"
                 android:layout_height="@dimen/size_52"
-                android:layout_marginRight="@dimen/size_24"
+                android:layout_marginRight="@dimen/size_20"
                 android:background="@drawable/pink_circle">
 
                 <ImageView
@@ -202,7 +202,7 @@
             <RelativeLayout
                 android:layout_width="@dimen/size_52"
                 android:layout_height="@dimen/size_52"
-                android:layout_marginRight="@dimen/size_24"
+                android:layout_marginRight="@dimen/size_20"
                 android:background="@drawable/pink_circle">
 
                 <ImageView
@@ -216,7 +216,6 @@
             <RelativeLayout
                 android:layout_width="@dimen/size_52"
                 android:layout_height="@dimen/size_52"
-                android:layout_marginRight="@dimen/size_24"
                 android:background="@drawable/pink_circle">
 
                 <ImageView

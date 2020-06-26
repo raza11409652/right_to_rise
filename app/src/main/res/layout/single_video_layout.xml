@@ -1,33 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
+
+<androidx.constraintlayout.widget.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:id="@+id/parent_layout"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+    android:padding="@dimen/size_24"
+android:background="@drawable/videos_back_pink_shadow">
+
+<TextView
+    android:id="@+id/title"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginTop="@dimen/size_4"
-    app:cardElevation="10sp"
-    android:layout_marginBottom="@dimen/size_4"
-    app:cardCornerRadius="@dimen/size_24">
+    android:text="title"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"></TextView>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/parent_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/back_vidoes_pink">
+<ImageView
+    android:layout_width="@dimen/size_24"
+    android:layout_height="@dimen/size_24"
+    android:src="@drawable/rkt_vidoe_icon"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="title"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"></TextView>
-
-        <ImageView
-            android:layout_width="@dimen/size_24"
-            android:layout_height="@dimen/size_24"
-            android:src="@drawable/rkt_vidoe_icon"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

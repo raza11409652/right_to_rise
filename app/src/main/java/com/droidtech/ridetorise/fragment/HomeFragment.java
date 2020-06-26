@@ -32,7 +32,7 @@ import java.util.ArrayList;
  * A simple {@link Fragment} subclass.
  */
 public class HomeFragment extends Fragment {
-    CardView aboutUs, training;
+    CardView aboutUs, training, consulting, poshCard, rktFoundation, downloadCard, videosCard, contactCard;
     TextView headerText;
     LinearLayout customLayout;
     View headerBottom;
@@ -95,6 +95,16 @@ public class HomeFragment extends Fragment {
 
 
         toolbar = getActivity().findViewById(R.id.toolbar);
+        /**
+         * Card viw init
+         */
+
+        consulting = view.findViewById(R.id.consulting_card) ;
+        poshCard = view.findViewById(R.id.posh_card) ;
+        rktFoundation = view.findViewById(R.id.rkt_foundation_card) ;
+        downloadCard  = view.findViewById(R.id.download_card) ;
+        videosCard = view.findViewById(R.id.card_vidoes) ;
+        contactCard = view.findViewById(R.id.card_contact_us) ;
 
         training.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -112,10 +122,52 @@ public class HomeFragment extends Fragment {
 
             }
         });
+        consulting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                updateUi(new Consultancy()  ,R.id.consulting , toolbar , getString(R.string.consulting));
+            }
+        });
+        poshCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                updateUi(new Posh()  ,R.id.posh , toolbar , getString(R.string.posh));
+
+            }
+        });
+        rktFoundation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                updateUi(new Foundation()  ,R.id.rkt_foundation , toolbar , getString(R.string.rkt_foundation));
+
+            }
+        });
+        downloadCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                updateUi(new Downloads()  , R.id.download , toolbar  , getString(R.string.download));
+            }
+        });
+        videosCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                updateUi(new VideosFragment()  ,R.id.videos , toolbar , getString(R.string.videos));
+
+            }
+        });
+        contactCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                updateUi(new Contact_fragment()  ,R.id.contact , toolbar , getString(R.string.contact_us));
+
+            }
+        });
+
 
 
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     private void flipperText(String slide) {
         TextView textView = new TextView(getContext());
         textView.setText(slide);
@@ -147,7 +199,7 @@ public class HomeFragment extends Fragment {
     @RequiresApi(api = Build.VERSION_CODES.M)
     private void changeThemeToCustom(Toolbar toolbar, String text) {
         toolbar.setBackgroundColor(getContext().getColor(R.color.colorPrimaryDark));
-        toolbar.setElevation((float) 10.0);
+        toolbar.setElevation((float) 20.0);
 
         if (toolbar.getChildCount() > 1) {
             toolbar.removeView(customLayout);
@@ -188,6 +240,7 @@ public class HomeFragment extends Fragment {
 //
 //    }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public void onResume() {
         super.onResume();

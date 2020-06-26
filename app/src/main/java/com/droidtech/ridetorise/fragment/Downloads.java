@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -20,10 +19,9 @@ import com.droidtech.ridetorise.R;
  * A simple {@link Fragment} subclass.
  */
 public class Downloads extends Fragment {
-    RelativeLayout govermentHeader ;
-    TextView govermentDesc ;
-    ImageView govermentImage ;
-
+    RelativeLayout govermentHeader, generalHeader, additionalHeader, poshHeader;
+    TextView govermentDesc, generalDesc, additionalDesc, poshDesc;
+    ImageView govermentImage, generalImage, additionalImage, poshArror;
 
 
     public Downloads() {
@@ -43,14 +41,50 @@ public class Downloads extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
         super.onViewCreated(view, savedInstanceState);
-        govermentHeader  =view.findViewById(R.id.header_goverment_download);
-        govermentDesc  = view.findViewById(R.id.goverment_desc);
-        govermentImage  = view.findViewById(R.id.arrow_image_goverment) ;
+        govermentHeader = view.findViewById(R.id.header_goverment_download);
+        govermentDesc = view.findViewById(R.id.goverment_desc);
+        govermentImage = view.findViewById(R.id.arrow_image_goverment);
+
+        generalHeader = view.findViewById(R.id.generel_header_download);
+        generalImage = view.findViewById(R.id.general_arrow);
+        generalDesc = view.findViewById(R.id.genrel_desc);
+
+        additionalHeader = view.findViewById(R.id.additional_header);
+        additionalDesc = view.findViewById(R.id.additional_desc);
+        additionalImage = view.findViewById(R.id.additional_arrow);
+
+
+        poshHeader = view.findViewById(R.id.posh_header);
+        poshArror = view.findViewById(R.id.posh_arrow);
+        poshDesc = view.findViewById(R.id.posh_desc);
+
+
+        generalHeader.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                collapseExpandTextView(generalDesc, generalImage);
+            }
+        });
+
+
         govermentHeader.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                collapseExpandTextView(govermentDesc ,govermentImage);
+                collapseExpandTextView(govermentDesc, govermentImage);
+            }
+        });
+
+        additionalHeader.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                collapseExpandTextView(additionalDesc, additionalImage);
+            }
+        });
+        poshHeader.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                collapseExpandTextView(poshDesc, poshArror);
             }
         });
 
@@ -69,10 +103,12 @@ public class Downloads extends Fragment {
 //        }
 //
 
-        if (textView.getVisibility()==View.GONE){
+        if (textView.getVisibility() == View.GONE) {
             textView.setVisibility(View.VISIBLE);
-        }else{
+            imageView.setImageDrawable(getContext().getDrawable(R.drawable.ic_arrow_drop_up_black_24dp));
+        } else {
             textView.setVisibility(View.GONE);
+            imageView.setImageDrawable(getContext().getDrawable(R.drawable.rkt_arrow_down_icon));
 
         }
         ObjectAnimator animation = ObjectAnimator.ofInt(textView, "maxLines", textView.getMaxLines());
