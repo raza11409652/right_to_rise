@@ -163,18 +163,12 @@ public class Home extends AppCompatActivity {
     private void changeToNormal(Toolbar toolbar) {
         toolbar.setBackgroundColor(getColor(R.color.transparent));
         toolbar.setElevation((float) 0.0);
+        Log.d("TAG", "changeToNormal: " + customLayout.getChildCount());
         if (customLayout.getChildCount()>0){
             toolbar.removeView(customLayout);
         }else{
             Log.d("TAG", "changeToNormal: " +toolbar.getChildCount() );
-          for (int i = 1;  i<toolbar.getChildCount() ; i++){
-              if (i==0){
-//                  return;
-              }else{
-                  toolbar.removeViewAt(i);
-              }
-
-          }
+            toolbar.removeViewAt(2);
         }
 
         MenuItem item = navigationView.getCheckedItem();
