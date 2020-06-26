@@ -3,14 +3,15 @@ package com.droidtech.ridetorise.fragment;
 import android.annotation.SuppressLint;
 import android.os.Build;
 import android.os.Bundle;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.ViewFlipper;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,11 +19,13 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.droidtech.ridetorise.R;
+import com.droidtech.ridetorise.modal.Sliding;
 import com.google.android.material.navigation.NavigationView;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -35,6 +38,10 @@ public class HomeFragment extends Fragment {
     ImageView logo_header;
     Toolbar toolbar;
     NavigationView navigationView;
+    TextView slideText;
+    Animation animation;
+    ViewFlipper viewFlipper;
+    ArrayList<Sliding> list = new ArrayList<>();
 
     public HomeFragment() {
         // Required empty public constructor
@@ -53,6 +60,24 @@ public class HomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        viewFlipper = view.findViewById(R.id.viewFlipper);
+
+        String strSlide[] = {
+                "Slide 1",
+                "Slide 2",
+                "Slide 3",
+                "Slide 4",
+                "Slide 5",
+
+        };
+
+
+        for (String slide : strSlide) {
+            flipperText (slide);
+        }
+//        animation =AnimationUtils.loadAnimation(getContext(), R.anim.anim);
+//        slideText.startAnimation(animation);
         headerBottom = LayoutInflater.from(getContext()).inflate(R.layout.header_layout_logo, null, false);
         customLayout = new LinearLayout(getContext());
         customLayout.setOrientation(LinearLayout.VERTICAL);
@@ -74,7 +99,7 @@ public class HomeFragment extends Fragment {
         training.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                updateUi(new Training(), R.id.training , toolbar , getString(R.string.training));
+                updateUi(new Training(), R.id.training, toolbar, getString(R.string.training));
             }
         });
         aboutUs.setOnClickListener(new View.OnClickListener() {
@@ -82,18 +107,30 @@ public class HomeFragment extends Fragment {
             public void onClick(View v) {
 //        Fragment fragment = (Fragment) getFragmentManager().getFragments();
 
-                updateUi(new AboutUsFragment(), R.id.about , toolbar , getString(R.string.about_us));
+                updateUi(new AboutUsFragment(), R.id.about, toolbar, getString(R.string.about_us));
 
 
             }
         });
 
 
+    }
+
+    private void flipperText(String slide) {
+        TextView textView = new TextView(getContext());
+        textView.setText(slide);
+        textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+        viewFlipper.addView(textView);
+        viewFlipper.setFlipInterval(2000);
+        viewFlipper.setAutoStart(true);
+        //animation
+        viewFlipper.setOutAnimation(getContext(), android.R.anim.slide_out_right);
+        viewFlipper.setInAnimation(getContext(), android.R.anim.slide_in_left);
 
     }
 
     @RequiresApi(api = Build.VERSION_CODES.M)
-    private void updateUi(Fragment fragment, int index , Toolbar toolbar , String string) {
+    private void updateUi(Fragment fragment, int index, Toolbar toolbar, String string) {
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
         transaction.replace(R.id.frame_layout_holder, fragment);
         transaction.addToBackStack(null);
@@ -102,7 +139,7 @@ public class HomeFragment extends Fragment {
         navigationView.setCheckedItem(index);
         MenuItem item = navigationView.getCheckedItem();
         item.setChecked(true);
-        changeThemeToCustom(toolbar ,string );
+        changeThemeToCustom(toolbar, string);
 
     }
 
@@ -134,9 +171,9 @@ public class HomeFragment extends Fragment {
     @SuppressLint("ResourceType")
     @RequiresApi(api = Build.VERSION_CODES.M)
     private void changeToNormal(Toolbar toolbar) {
-        toolbar.setBackgroundColor(getContext() .  getColor(R.color.transparent));
+        toolbar.setBackgroundColor(getContext().getColor(R.color.transparent));
         toolbar.setElevation((float) 0.0);
-        if (customLayout.getChildCount()>0){
+        if (customLayout.getChildCount() > 0) {
             toolbar.removeView(customLayout);
         }
 
@@ -149,7 +186,6 @@ public class HomeFragment extends Fragment {
 //        getApplication().setTheme(R.style.NoActionBar);
 
     }
-
 
 
 }
