@@ -192,10 +192,16 @@ public class Home extends AppCompatActivity {
     private void changeThemeToCustom(Toolbar toolbar, String text) {
         toolbar.setBackgroundColor(getColor(R.color.colorPrimaryDark));
         toolbar.setElevation((float) 10.0);
-
+        Log.d("AG", "changeThemeToCustom: toolbar views" + toolbar.getChildCount());
         if (toolbar.getChildCount() > 1) {
-            toolbar.removeView(customLayout);
-            customLayout.removeAllViews();
+            try{
+                toolbar.removeView(customLayout);
+                customLayout.removeAllViews();
+                toolbar.removeViewAt(2);
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+
         }
         toolbar.addView(customLayout);
         customLayout.addView(logo_header);
