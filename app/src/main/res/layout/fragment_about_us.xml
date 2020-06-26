@@ -42,7 +42,7 @@
                       android:layout_height="@dimen/size_24"
                       android:layout_alignParentEnd="true"
                       android:layout_centerVertical="true"
-                      android:layout_marginRight="@dimen/size_10"
+                      android:layout_marginRight="@dimen/size_24"
                       android:src="@drawable/rkt_arrow_down_icon" />
               </RelativeLayout>
 
@@ -83,7 +83,7 @@
                       android:layout_height="@dimen/size_24"
                       android:layout_alignParentEnd="true"
                       android:layout_centerVertical="true"
-                      android:layout_marginRight="@dimen/size_10"
+                      android:layout_marginRight="@dimen/size_24"
                       android:src="@drawable/rkt_arrow_down_icon" />
               </RelativeLayout>
               <LinearLayout
@@ -151,7 +151,7 @@
                       android:layout_height="@dimen/size_24"
                       android:layout_alignParentEnd="true"
                       android:layout_centerVertical="true"
-                      android:layout_marginRight="@dimen/size_10"
+                      android:layout_marginRight="@dimen/size_24"
                       android:src="@drawable/rkt_arrow_down_icon" />
               </RelativeLayout>
 
@@ -189,7 +189,7 @@
                       android:layout_height="@dimen/size_24"
                       android:layout_alignParentEnd="true"
                       android:layout_centerVertical="true"
-                      android:layout_marginRight="@dimen/size_10"
+                      android:layout_marginRight="@dimen/size_24"
                       android:src="@drawable/rkt_arrow_down_icon" />
               </RelativeLayout>
 
@@ -227,7 +227,7 @@
                       android:layout_height="@dimen/size_24"
                       android:layout_alignParentEnd="true"
                       android:layout_centerVertical="true"
-                      android:layout_marginRight="@dimen/size_10"
+                      android:layout_marginRight="@dimen/size_24"
                       android:src="@drawable/rkt_arrow_down_icon" />
               </RelativeLayout>
 
@@ -265,7 +265,7 @@
                       android:layout_height="@dimen/size_24"
                       android:layout_alignParentEnd="true"
                       android:layout_centerVertical="true"
-                      android:layout_marginRight="@dimen/size_12"
+                      android:layout_marginRight="24sp"
                       android:src="@drawable/rkt_downloads_icon" />
               </RelativeLayout>
 

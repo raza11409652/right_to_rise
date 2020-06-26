@@ -5,7 +5,7 @@
         android:width="1sp"
         android:color="@color/pinkColor"
         android:dashGap="1sp"></stroke>
-    <solid android:color="@color/colorPrimaryDark"></solid>
+    <solid android:color="@color/grey_back"></solid>
     <corners android:radius="@dimen/size_4"></corners>
     <padding
         android:bottom="@dimen/padding_12"

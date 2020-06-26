@@ -128,7 +128,7 @@
 
             <Button
                 android:layout_width="200sp"
-                android:layout_height="wrap_content"
+                android:layout_height="64sp"
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/size_18"
                 android:background="@drawable/btn_shadow_blue"
@@ -160,7 +160,7 @@
             <RelativeLayout
                 android:layout_width="@dimen/size_52"
                 android:layout_height="@dimen/size_52"
-                android:layout_marginRight="@dimen/size_8"
+                android:layout_marginRight="@dimen/size_24"
                 android:background="@drawable/pink_circle">
 
                 <ImageView
@@ -174,7 +174,7 @@
             <RelativeLayout
                 android:layout_width="@dimen/size_52"
                 android:layout_height="@dimen/size_52"
-                android:layout_marginRight="@dimen/size_8"
+                android:layout_marginRight="@dimen/size_24"
                 android:background="@drawable/pink_circle">
 
                 <ImageView
@@ -188,7 +188,7 @@
             <RelativeLayout
                 android:layout_width="@dimen/size_52"
                 android:layout_height="@dimen/size_52"
-                android:layout_marginRight="@dimen/size_8"
+                android:layout_marginRight="@dimen/size_24"
                 android:background="@drawable/pink_circle">
 
                 <ImageView
@@ -202,7 +202,7 @@
             <RelativeLayout
                 android:layout_width="@dimen/size_52"
                 android:layout_height="@dimen/size_52"
-                android:layout_marginRight="@dimen/size_8"
+                android:layout_marginRight="@dimen/size_24"
                 android:background="@drawable/pink_circle">
 
                 <ImageView
@@ -216,7 +216,7 @@
             <RelativeLayout
                 android:layout_width="@dimen/size_52"
                 android:layout_height="@dimen/size_52"
-                android:layout_marginRight="@dimen/size_8"
+                android:layout_marginRight="@dimen/size_24"
                 android:background="@drawable/pink_circle">
 
                 <ImageView
@@ -229,6 +229,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:layout_marginLeft="30dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/size_12"
@@ -248,6 +249,10 @@
                 android:layout_height="wrap_content"
                 android:text="@string/webiste_name"
                 android:textStyle="italic"></TextView>
+            <ImageView
+                android:src="@drawable/weblink_rkt_icon"
+                android:layout_width="@dimen/size_24"
+                android:layout_height="@dimen/size_24"></ImageView>
 
         </LinearLayout>
 

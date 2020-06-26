@@ -3,7 +3,7 @@
     <string name="header_home_text">A sliding demo text is to displayed here with a transition</string>
     <string name="about_us">About Us</string>
     <string name="training">Training</string>
-    <string name="posh">Posh</string>
+    <string name="posh">POSH</string>
     <string name="consulting">Consulting</string>
     <string name="rkt_foundation">RKT Foundation</string>
     <string name="download">Downloads</string>
@@ -30,7 +30,7 @@
     <string name="additional_downloads">Additional Downloads</string>
     <string name="lets_know_posh">Lets know POSH</string>
     <string name="description_goverment_text">"Goverment description text  Goverment description text "</string>
-    <string name="bare_act_posh">Bare Act (Posh Act)</string>
+    <string name="bare_act_posh">Bare Act (POSH Act)</string>
     <string name="bare_act_rules">Bare Act (Rules)</string>
     <string name="posh_100_posh_jano">POSH 100 POSH Jano</string>
     <string name="posh_101_practitionar">Posh 101 Practiotionar</string>

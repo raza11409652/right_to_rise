@@ -1,9 +1,11 @@
 package com.droidtech.ridetorise.activity;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -48,6 +50,7 @@ public class Home extends AppCompatActivity {
     TextView headerText;
     LinearLayout customLayout;
     View headerBottom;
+    Activity activity;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -59,13 +62,13 @@ public class Home extends AppCompatActivity {
             e.printStackTrace();
         }
         setContentView(R.layout.activity_home);
+        activity = this;
         drawerLayout = findViewById(R.id.parent_drawer);
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ActionBar actionbar = getSupportActionBar();
         actionbar.setDisplayHomeAsUpEnabled(true);
         actionbar.setHomeButtonEnabled(true);
-
 
 
 //        actionbar.setIcon(getDrawable(R.drawable.rkt_menu_ison));
@@ -78,6 +81,7 @@ public class Home extends AppCompatActivity {
         try {
             Drawable drawable = ResourcesCompat.getDrawable(getResources(), R.drawable.rkt_menu_ison, getTheme());
             actionBarDrawerToggle.setHomeAsUpIndicator(drawable);
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -95,11 +99,13 @@ public class Home extends AppCompatActivity {
         customLayout.setOrientation(LinearLayout.VERTICAL);
         logo_header = new ImageView(this);
         logo_header.setImageDrawable(getDrawable(R.drawable.text_logo));
+        logo_header.setPadding(0, 20, 0, 20);
+        logo_header.setMaxHeight(18);
         headerText = new TextView(this);
         headerText.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
         headerText.setAllCaps(true);
         headerText.setTextColor(getColor(R.color.colorAccent));
-        headerText.setTextSize((float) 24.0);
+        headerText.setTextSize((float) 18.0);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
@@ -157,9 +163,27 @@ public class Home extends AppCompatActivity {
     private void changeToNormal(Toolbar toolbar) {
         toolbar.setBackgroundColor(getColor(R.color.transparent));
         toolbar.setElevation((float) 0.0);
-        toolbar.removeView(customLayout);
+        if (customLayout.getChildCount()>0){
+            toolbar.removeView(customLayout);
+        }else{
+            Log.d("TAG", "changeToNormal: " +toolbar.getChildCount() );
+          for (int i = 1;  i<toolbar.getChildCount() ; i++){
+              if (i==0){
+//                  return;
+              }else{
+                  toolbar.removeViewAt(i);
+              }
+
+          }
+        }
+
         MenuItem item = navigationView.getCheckedItem();
-        item.setChecked(false);
+        try {
+            item.setChecked(false);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        getApplication().setTheme(R.style.NoActionBar);
 
     }
 
@@ -171,15 +195,17 @@ public class Home extends AppCompatActivity {
         if (toolbar.getChildCount() > 1) {
             toolbar.removeView(customLayout);
             customLayout.removeAllViews();
-
         }
         toolbar.addView(customLayout);
         customLayout.addView(logo_header);
         customLayout.addView(headerText);
         headerText.setText(text);
         customLayout.addView(headerBottom);
-        toolbar.setBackgroundColor(getColor(R.color.grey_back));
+//        View view = customLayout.findViewById(R.id.txt);
+//        view.setMinimumWidth(headerText.getMaxWidth());
 
+        toolbar.setBackgroundColor(getColor(R.color.grey_back));
+//        activity.setTheme(R.style.NoActionBarGrey);
 
 
     }
@@ -208,12 +234,14 @@ public class Home extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public void onBackPressed() {
-
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START);
+            return;
+        }
         changeToNormal(toolbar);
         updateUi(new HomeFragment());
 
     }
-
 
 
 }
