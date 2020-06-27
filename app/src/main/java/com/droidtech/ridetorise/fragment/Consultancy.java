@@ -20,10 +20,10 @@ import com.droidtech.ridetorise.R;
  * A simple {@link Fragment} subclass.
  */
 public class Consultancy extends Fragment {
-    RelativeLayout header;
-    LinearLayout descLayout;
+    RelativeLayout header, headerAnnual, headerAdditionalDownload;
+    LinearLayout descLayout, descAnnual, descAdditionalDownload;
     TextView descText;
-    ImageView arrowUp;
+    ImageView arrowUp, arrowAnnual, arrowAdditionalDownload;
 
     public Consultancy() {
         // Required empty public constructor
@@ -44,10 +44,37 @@ public class Consultancy extends Fragment {
         descLayout = view.findViewById(R.id.desc_layout);
         descText = view.findViewById(R.id.desc_text);
         arrowUp = view.findViewById(R.id.arrow_btn);
+
+        /**
+         *
+         */
+        headerAnnual = view.findViewById(R.id.header_annual_consultancy);
+        arrowAnnual = view.findViewById(R.id.arrow_annual_consultancy);
+        descAnnual = view.findViewById(R.id.desc_annual_consultancy);
+
+
+        headerAdditionalDownload = view.findViewById(R.id.additional_download_header);
+        descAdditionalDownload = view.findViewById(R.id.additional_download_desc);
+        arrowAdditionalDownload = view.findViewById(R.id.additional_download_arrow);
+
+
         header.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 expandeOrCollapse(descLayout, descText, arrowUp);
+            }
+        });
+
+        headerAnnual.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                expandeOrCollapse(descAnnual, descText, arrowAnnual);
+            }
+        });
+        headerAdditionalDownload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                expandeOrCollapse(descAdditionalDownload, descText, arrowAdditionalDownload);
             }
         });
     }
