@@ -48,10 +48,10 @@
                 </RelativeLayout>
 
                 <LinearLayout
-                    android:padding="@dimen/padding_12"
                     android:id="@+id/desc_our_company"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:padding="@dimen/padding_12"
                     android:visibility="gone">
 
                     <TextView
@@ -119,6 +119,7 @@
                 android:orientation="vertical">
 
                 <RelativeLayout
+                    android:id="@+id/header_core_belief"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/round_pink_shadow">
@@ -133,6 +134,7 @@
                         android:textSize="@dimen/size_18"></TextView>
 
                     <ImageView
+                        android:id="@+id/image_core_belief"
                         android:layout_width="@dimen/size_24"
                         android:layout_height="@dimen/size_24"
                         android:layout_alignParentEnd="true"
@@ -142,11 +144,19 @@
                 </RelativeLayout>
 
 
-                <TextView
+                <LinearLayout
+                    android:padding="@dimen/padding_8"
+                    android:id="@+id/desc_core_belief"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/description"
-                    android:visibility="gone"></TextView>
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dummy_text"></TextView>
+                </LinearLayout>
 
             </LinearLayout>
 
@@ -157,6 +167,7 @@
                 android:orientation="vertical">
 
                 <RelativeLayout
+                    android:id="@+id/vision_header"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/back_blue_shadow">
@@ -171,6 +182,7 @@
                         android:textSize="@dimen/size_18"></TextView>
 
                     <ImageView
+                        android:id="@+id/arrow_vision"
                         android:layout_width="@dimen/size_24"
                         android:layout_height="@dimen/size_24"
                         android:layout_alignParentEnd="true"
@@ -179,12 +191,19 @@
                         android:src="@drawable/rkt_arrow_down_icon" />
                 </RelativeLayout>
 
-
-                <TextView
+                <LinearLayout
+                    android:id="@+id/vision_desc"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/description"
-                    android:visibility="gone"></TextView>
+                    android:orientation="vertical"
+                    android:padding="@dimen/padding_8"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dummy_text"></TextView>
+                </LinearLayout>
 
             </LinearLayout>
 
@@ -195,6 +214,7 @@
                 android:orientation="vertical">
 
                 <RelativeLayout
+                    android:id="@+id/header_mission"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/round_pink_shadow">
@@ -209,6 +229,7 @@
                         android:textSize="@dimen/size_18"></TextView>
 
                     <ImageView
+                        android:id="@+id/arrow_mission"
                         android:layout_width="@dimen/size_24"
                         android:layout_height="@dimen/size_24"
                         android:layout_alignParentEnd="true"
@@ -218,11 +239,18 @@
                 </RelativeLayout>
 
 
-                <TextView
+                <LinearLayout
+                    android:id="@+id/desc_mission"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/description"
-                    android:visibility="gone"></TextView>
+                    android:orientation="vertical"
+                    android:padding="@dimen/padding_8"
+                    android:visibility="gone">
+                    <TextView
+                        android:text="@string/dummy_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"></TextView>
+                </LinearLayout>
 
             </LinearLayout>
 

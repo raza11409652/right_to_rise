@@ -21,9 +21,9 @@ import com.droidtech.ridetorise.R;
 public class AboutUsFragment extends Fragment {
     Toolbar toolbar;
 
-    RelativeLayout headerOurCompany, headerOurTeam;
-    LinearLayout descOurCompany, descOurTeam;
-    ImageView arrowOurCompany, arrowOurTeam;
+    RelativeLayout headerOurCompany, headerOurTeam, headerCoreBelief, headerVision, headerMission;
+    LinearLayout descOurCompany, descOurTeam, descCoreBelief, descVision, descMission;
+    ImageView arrowOurCompany, arrowOurTeam, arrowCoreBelief, arrowVision, arrowMission;
 
     public AboutUsFragment() {
         // Required empty public constructor
@@ -52,6 +52,27 @@ public class AboutUsFragment extends Fragment {
         arrowOurTeam = view.findViewById(R.id.arrow_btn);
         descOurTeam = view.findViewById(R.id.desc_layout);
 
+        /**
+         * Core belief
+         */
+        headerCoreBelief = view.findViewById(R.id.header_core_belief);
+        descCoreBelief = view.findViewById(R.id.desc_core_belief);
+        arrowCoreBelief = view.findViewById(R.id.image_core_belief);
+
+
+        /**
+         * Vision
+         */
+        headerVision = view.findViewById(R.id.vision_header);
+        descVision = view.findViewById(R.id.vision_desc);
+        arrowVision = view.findViewById(R.id.arrow_vision);
+        /**
+         * Mission
+         */
+        headerMission = view.findViewById(R.id.header_mission);
+        descMission = view.findViewById(R.id.desc_mission);
+        arrowMission = view.findViewById(R.id.arrow_mission);
+
 
         headerOurCompany.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,6 +86,27 @@ public class AboutUsFragment extends Fragment {
                 expand(descOurTeam, arrowOurTeam);
             }
         });
+
+
+        headerCoreBelief.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                expand(descCoreBelief, arrowCoreBelief);
+            }
+        });
+        headerVision.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                expand(descVision, arrowVision);
+            }
+        });
+        headerMission.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                expand(descMission, arrowMission);
+            }
+        });
+
 
     }
 
