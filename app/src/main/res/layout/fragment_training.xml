@@ -29,6 +29,7 @@
                     android:background="@drawable/round_pink_shadow">
 
                     <TextView
+                        android:textStyle="bold"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
@@ -75,6 +76,7 @@
                     android:background="@drawable/back_blue_shadow">
 
                     <TextView
+                        android:textStyle="bold"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
@@ -95,6 +97,7 @@
 
 
                 <LinearLayout
+                    android:textStyle="bold"
                     android:padding="@dimen/padding_12"
                     android:id="@+id/posh_101_desc"
                     android:layout_width="match_parent"
@@ -123,6 +126,7 @@
                     android:background="@drawable/round_pink_shadow">
 
                     <TextView
+                        android:textStyle="bold"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
@@ -170,6 +174,7 @@
                     android:background="@drawable/back_blue_shadow">
 
                     <TextView
+                        android:textStyle="bold"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
@@ -216,6 +221,7 @@
                     android:background="@drawable/round_pink_shadow">
 
                     <TextView
+                        android:textStyle="bold"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
@@ -254,6 +260,7 @@
                     android:background="@drawable/back_blue_shadow">
 
                     <TextView
+                        android:textStyle="bold"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
@@ -292,6 +299,7 @@
                     android:background="@drawable/round_pink_shadow">
 
                     <TextView
+                        android:textStyle="bold"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
@@ -311,6 +319,7 @@
 
 
                 <TextView
+                    android:textStyle="bold"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/description"
@@ -330,6 +339,7 @@
                     android:background="@drawable/back_blue_shadow">
 
                     <TextView
+                        android:textStyle="bold"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"

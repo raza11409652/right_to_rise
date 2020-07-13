@@ -29,6 +29,7 @@
                     android:background="@drawable/round_pink_shadow">
 
                     <TextView
+                        android:textStyle="bold"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
@@ -70,6 +71,7 @@
                     android:background="@drawable/back_blue_shadow">
 
                     <TextView
+                        android:textStyle="bold"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
@@ -144,10 +146,11 @@
                     android:background="@drawable/round_pink_shadow">
 
                     <TextView
+                        android:textStyle="bold"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:layout_marginLeft="@dimen/padding_12"
+                        android:layout_marginLeft="@dimen/size_24"
                         android:text="@string/summry_of_act"
                         android:textColor="@color/colorPrimaryDark"
                         android:textSize="@dimen/size_18"></TextView>
@@ -158,12 +161,13 @@
                         android:layout_height="@dimen/size_24"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
-                        android:layout_marginRight="@dimen/size_10"
+                        android:layout_marginRight="@dimen/size_24"
                         android:src="@drawable/rkt_arrow_down_icon" />
                 </RelativeLayout>
 
 
                 <TextView
+                    android:textStyle="bold"
                     android:id="@+id/desc_summary_act"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -186,10 +190,11 @@
                     android:background="@drawable/back_blue_shadow">
 
                     <TextView
+                        android:textStyle="bold"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:layout_marginLeft="@dimen/padding_12"
+                        android:layout_marginLeft="@dimen/size_24"
                         android:text="@string/qna"
                         android:textColor="@color/colorPrimaryDark"
                         android:textSize="@dimen/size_18" />
@@ -200,7 +205,7 @@
                         android:layout_height="@dimen/size_24"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
-                        android:layout_marginRight="@dimen/size_10"
+                        android:layout_marginRight="@dimen/size_24"
                         android:src="@drawable/rkt_arrow_down_icon" />
                 </RelativeLayout>
 
